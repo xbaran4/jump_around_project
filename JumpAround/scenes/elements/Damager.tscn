@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/elements/Element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/elements/Damager.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/elements/Spacemine_v3.png" type="Texture" id=3]
+
+[node name="Damager" instance=ExtResource( 1 )]
+collision_layer = 16
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.253906, 0.253906 )
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Damager_body_entered"]

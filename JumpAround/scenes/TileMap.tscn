@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/bg/background_v4.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 630, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 346, 10 )
+
+[node name="TileMap" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.00383358, 0 )
+scale = Vector2( 0.675926, 0.675926 )
+texture = ExtResource( 1 )
+offset = Vector2( 960.828, 540 )
+
+[node name="Top" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 643, -5 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+shape = SubResource( 1 )
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 643, 679.87 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2( 0, 0.130005 )
+shape = SubResource( 1 )
+
+[node name="Left" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -3, 345 )
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource( 2 )
+
+[node name="Right" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1288, 345 )
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+shape = SubResource( 2 )
+

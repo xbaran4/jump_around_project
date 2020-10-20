@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/elements/Element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/elements/Orb.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/elements/orb.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[node name="Orb" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+editor/display_folded = true
+position = Vector2( -4.05312e-006, -4.05312e-006 )
+scale = Vector2( 0.234375, 0.234375 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Bonus_body_entered"]

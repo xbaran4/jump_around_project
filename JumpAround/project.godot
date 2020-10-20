@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="JumpAround"
+run/main_scene="res://scenes/screens/TitleScreen.tscn"
+boot_splash/image="res://Sprites/bg/JumpAround_logo_v5.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0.447059, 0.733333, 1 )
+config/icon="res://icon.png"
+
+[autoload]
+
+Lobby="*res://scripts/Lobby.gd"
+
+[debug]
+
+gdscript/completion/autocomplete_setters_and_getters=true
+gdscript/warnings/unsafe_property_access=true
+gdscript/warnings/unsafe_method_access=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
+shapes/collision/shape_color=Color( 0.701961, 0.0509804, 0, 0.501961 )
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+window/handheld/emulate_touchscreen=true
+
+[gui]
+
+timers/tooltip_delay_sec=0.5
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_2="Player and Walls"
+2d_physics/layer_3="Other Elements"
+2d_physics/layer_5="Damager"
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0, 0.447059, 0.733333, 1 )
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,244 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://label_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Sprites/ships/ship_red.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/player/shield_v4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/player/shield_healthv2.png" type="Texture" id=5]
+[ext_resource path="res://fonts/Baloo-Regular.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 6 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.24, 0.515556, 1 )
+colors = PoolColorArray( 0, 0.94902, 0.984314, 0.784314, 0.968627, 0.988235, 0, 0.784314, 0.988235, 0.2, 0.0313726, 0.901961 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.0908565, 0 ), 0.0, 2.04709, 0, 0, Vector2( 1, 0 ), -2.31249, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 20, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+angular_velocity = 1.36185e+015
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 200.0
+radial_accel = -24.3
+angle = 26.0
+scale = 20.9
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.0533333, 0.595556, 1 )
+colors = PoolColorArray( 0.0447006, 0.82846, 0.953613, 1, 1, 0.952461, 0.273438, 1, 0.980957, 0.300674, 0.0383186, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 188.173, 0, 0, Vector2( 0.990162, 93.72 ), -1136.3, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0.00578703, 0 ), 0.0, 2.25924, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 100.03, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 139.6
+angular_velocity = 4.23025e-010
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_curve = SubResource( 10 )
+scale = 3.59
+scale_curve = SubResource( 12 )
+color_ramp = SubResource( 8 )
+
+[sub_resource type="Gradient" id=14]
+colors = PoolColorArray( 0.121569, 0.121569, 0.121569, 0.811765, 0.290196, 0.290196, 0.290196, 0.211765 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
+
+[sub_resource type="Curve" id=16]
+_data = [ Vector2( 0.175926, 0.6859 ), 0.0, 2.51534, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 1
+emission_sphere_radius = 75.7
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -94.36, 0 )
+initial_velocity = 107.0
+angular_velocity = 2.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.76
+scale = 14.33
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
+
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.990162, 0.0809 ), -3.89523, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=21]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 207.0
+angular_velocity = 1.49184e-019
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 5.6
+scale = 12.65
+scale_curve = SubResource( 20 )
+color = Color( 0.988235, 0.894118, 0.0235294, 1 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 27.5758, 24.8351 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 35, 24 )
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 21
+script = ExtResource( 1 )
+
+[node name="WinningLabel" type="Label" parent="."]
+visible = false
+margin_left = -55.0
+margin_top = -86.0
+margin_right = 57.0
+margin_bottom = -32.0
+theme = ExtResource( 2 )
+text = "Winner"
+align = 1
+valign = 1
+
+[node name="ShipSprite" type="Sprite" parent="."]
+scale = Vector2( 0.174737, 0.174737 )
+texture = ExtResource( 3 )
+
+[node name="ShieldSprite" type="Sprite" parent="ShipSprite"]
+visible = false
+scale = Vector2( 2.06787, 2.06787 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="StatSprite" type="Sprite" parent="ShipSprite"]
+visible = false
+position = Vector2( 0, -313.992 )
+scale = Vector2( 2.13359, 2.13359 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="StatLabel" type="Label" parent="ShipSprite/StatSprite"]
+margin_left = -45.0
+margin_top = -78.0
+margin_right = 39.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="Particles" type="Node2D" parent="ShipSprite"]
+
+[node name="EngineParticles" type="Particles2D" parent="ShipSprite/Particles"]
+position = Vector2( -185.103, -17.452 )
+rotation = -3.14159
+scale = Vector2( 3.69168, 3.69168 )
+amount = 200
+lifetime = 0.8
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="JumpParticles" type="Particles2D" parent="ShipSprite/Particles"]
+position = Vector2( 0, 142.42 )
+rotation = 1.5708
+emitting = false
+amount = 200
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+draw_order = 1
+process_material = SubResource( 13 )
+
+[node name="HitParticles" type="Particles2D" parent="ShipSprite/Particles"]
+position = Vector2( 0, 57.29 )
+rotation = 1.5708
+emitting = false
+amount = 200
+local_coords = false
+draw_order = 1
+process_material = SubResource( 18 )
+
+[node name="WinningParticles" type="Particles2D" parent="ShipSprite/Particles"]
+pause_mode = 2
+emitting = false
+amount = 100
+lifetime = 2.0
+speed_scale = 3.0
+explosiveness = 0.7
+process_material = SubResource( 21 )
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.26923, 0.966375 )
+shape = SubResource( 22 )
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="DownTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="StatTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="ShieldTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="ImmortalTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="KockoutArea" type="Area2D" parent="."]
+editor/display_folded = true
+collision_layer = 512
+collision_mask = 512
+
+[node name="PlayersCollision" type="CollisionShape2D" parent="KockoutArea"]
+shape = SubResource( 23 )
+
+[node name="Tween" type="Tween" parent="."]
+playback_process_mode = 0
+
+[connection signal="area_entered" from="KockoutArea" to="." method="_on_KockoutArea_area_entered"]
